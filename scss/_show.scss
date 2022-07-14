@@ -1,0 +1,96 @@
+section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    article {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotateY(180deg);
+        }
+
+        .slogan {
+            position: absolute;
+            right: 8%;
+            top: 50%;
+            transform: translateY(-60%);
+            text-align: right;
+            padding: 50px;
+            perspective: 900px;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 500px;
+                height: 500px;
+                border: 1px solid #fff;
+                position: absolute;
+                top: 0px; right: 0px;
+                opacity: 0;
+                transition: all 1.5s;
+            }
+
+            h2 {
+                display: inline-block;
+                overflow: hidden;
+                position: relative;
+                margin-bottom: 20px;
+
+                .inner {
+                    font: normal 200px/1 "Abril Fatface";
+                    color: #fff;
+                    position: relative;
+                    transform: scaleY(1.25);
+                    opacity: 0;
+                    transition: opacity 0.2s 0.5s;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: #fff;
+                    position: absolute;
+                    top: 0px; right: -100%;
+                    transition: right ease-in-out 1s;
+                }
+            }
+        }
+
+        &.on {
+            z-index: 3;
+
+            .slogan {
+                &::before {
+                    opacity: 1;
+                    transform: rotateY(220deg);
+                }
+
+                h2 {
+                    .inner {
+                        opacity: 1;
+                    }
+
+                    &::after {
+                        right: 100%;
+                    }
+                }
+            }
+        }
+        &.lower {
+            z-index: 2;
+        }
+    }
+}
