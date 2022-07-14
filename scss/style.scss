@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+
+
+@import 'reset';
+@import 'header';
+@import 'show';
+@import 'sns';
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+    article {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font: bold 100px/1 "arial";
+        color: #fff;
+
+        &.lower {
+            background: pink;
+        }
+        &.upper {
+            background: aqua;
+            -webkit-mask: url(../src/mask1.png);
+            -webkit-mask-size: 2300% 100%;
+            -webkit-mask-position: 0% 0%;
+        }
+    }
+}
