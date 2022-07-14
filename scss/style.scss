@@ -35,4 +35,15 @@ section {
             -webkit-mask-position: 0% 0%;
         }
     }
+
+    &.on {
+        .upper {
+            animation: mask-play 1.4s steps(22) forwards;
+        }
+    }
+}
+
+@keyframes mask-play {
+    0% {-webkit-mask-position: 0% 0%;}
+    100% {-webkit-mask-position:100% 0%;}
 }

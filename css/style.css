@@ -44,5 +44,17 @@ section article.upper {
   -webkit-mask-size: 2300% 100%;
   -webkit-mask-position: 0% 0%;
 }
+section.on .upper {
+  animation: mask-play 1.4s steps(22) forwards;
+}
+
+@keyframes mask-play {
+  0% {
+    -webkit-mask-position: 0% 0%;
+  }
+  100% {
+    -webkit-mask-position: 100% 0%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
